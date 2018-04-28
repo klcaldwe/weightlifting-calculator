@@ -1,0 +1,132 @@
+<Project>
+  <Name>Weightlifting Calculator</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Form1</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Form1</Name>
+        <Access>Public</Access>
+        <Location left="831" top="107" />
+        <Size width="385" height="224" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">double reps</Member>
+        <Member type="Field">double weight</Member>
+        <Member type="Method">private void combBox1_SelectedIndexChanged(object sender, EventArgs e)</Member>
+        <Member type="Method">private void textBox52_TextChanged(object sender, EventArgs e)</Member>
+        <Member type="Method">private void Calculate_Click(object sender, EventArgs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Lombardi</Name>
+        <Access>Public</Access>
+        <Location left="62" top="677" />
+        <Size width="384" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private double _weight</Member>
+        <Member type="Field">private double _repetitions</Member>
+        <Member type="Field">private double _max</Member>
+        <Member type="Method">public void Lombardi(double weight, double repetitions)</Member>
+        <Member type="Method">public double weightLifted()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>brzycki</Name>
+        <Access>Public</Access>
+        <Location left="570" top="677" />
+        <Size width="384" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private double _weight</Member>
+        <Member type="Field">private double _repetitions</Member>
+        <Member type="Field">private double _max</Member>
+        <Member type="Method">public void brzycki(double weight, double repetitions)</Member>
+        <Member type="Method">public double weightLifted()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>epley</Name>
+        <Access>Public</Access>
+        <Location left="1093" top="677" />
+        <Size width="384" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private double _weight</Member>
+        <Member type="Field">private double _repetitions</Member>
+        <Member type="Field">private double _max</Member>
+        <Member type="Method">public void epley(double weight, double repetitions)</Member>
+        <Member type="Method">public double weightLifted()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>oConnor</Name>
+        <Access>Public</Access>
+        <Location left="1603" top="677" />
+        <Size width="384" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private double _weight</Member>
+        <Member type="Field">private double _repetitions</Member>
+        <Member type="Field">private double _max</Member>
+        <Member type="Method">public void oConnor(double weight, double repetitions)</Member>
+        <Member type="Method">public double weightLifted()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="4">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Lombardi</Name>
+    <Language>CSharp</Language>
+    <Entities />
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>brzycki</Name>
+    <Language>CSharp</Language>
+    <Entities />
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>epley</Name>
+    <Language>CSharp</Language>
+    <Entities />
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>oConnor</Name>
+    <Language>CSharp</Language>
+    <Entities />
+    <Relationships />
+  </ProjectItem>
+</Project>
