@@ -1,0 +1,97 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Weightlifting
+{
+    public partial class Form1 : Form
+    {
+        double reps = 0;
+        double weight = 0;
+        public Form1()
+        {
+            InitializeComponent();
+            this.ActiveControl = textBox52;
+            radioButton1.Checked = true;
+            radioButton2.Checked = true;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            reps = Convert.ToDouble(comboBox1.SelectedItem);
+        }
+
+        private void textBox52_TextChanged(object sender, EventArgs e)
+        {
+            weight = Convert.ToDouble(textBox52.Text);
+        }
+
+        private void Calculate_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked == true)
+            {
+                var Lombardi = new Lombardi(weight, reps);
+                double[] lombardi = Lombardi.weightLifted;
+                lombardi1.Text = lombardi[0].ToString();
+                lombardi2.Text = lombardi[1].ToString();
+                lombardi3.Text = lombardi[2].ToString();
+                lombardi4.Text = lombardi[3].ToString();
+                lombardi5.Text = lombardi[4].ToString();
+                lombardi6.Text = lombardi[5].ToString();
+                lombardi7.Text = lombardi[6].ToString();
+                lombardi8.Text = lombardi[7].ToString();
+                lombardi9.Text = lombardi[8].ToString();
+                lombardi10.Text = lombardi[9].ToString();
+            }
+            else if (radioButton2.Checked == true)
+            {
+                var Lombardi = new Lombardi(weight, reps);
+                double[] lombardi = Lombardi.weightLifted;
+                lombardi1.Text = lombardi[0].ToString();
+                lombardi2.Text = lombardi[1].ToString();
+                lombardi3.Text = lombardi[2].ToString();
+                lombardi4.Text = lombardi[3].ToString();
+                lombardi5.Text = lombardi[4].ToString();
+                lombardi6.Text = lombardi[5].ToString();
+                lombardi7.Text = lombardi[6].ToString();
+                lombardi8.Text = lombardi[7].ToString();
+                lombardi9.Text = lombardi[8].ToString();
+                lombardi10.Text = lombardi[9].ToString();
+            }
+        }
+    }
+    
+    class Lombardi : Form
+    {
+        private double _weight;
+        private double _repetitions;
+        private double _max;
+
+        public Lombardi(double weight, double repetitions)
+        {
+            this._weight = weight;
+            this._repetitions = repetitions;
+            _max = this._weight * Math.Pow(this._repetitions, 0.1);
+        }
+
+        public double[] weightLifted
+        {
+            get
+            {
+                double[] array = new double[10];
+                for (int i = 1; i <= 10; i++)
+                {
+                    array[i - 1] = Math.Round(this._max / (Math.Pow(i, .10)));
+                }
+                return array;
+            }
+        }
+    }
+}    
+    
