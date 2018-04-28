@@ -1,0 +1,199 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Weightlifting
+{
+    public partial class Form1 : Form
+    {
+        double reps = 0;
+        double weight = 0;
+        public Form1()
+        {
+            InitializeComponent();
+            this.ActiveControl = textBox52;
+            radioButton1.Checked = true;
+            radioButton2.Checked = true;
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            reps = Convert.ToDouble(comboBox1.SelectedItem);
+        }
+        private void textBox52_TextChanged(object sender, EventArgs e)
+        {
+            weight = Convert.ToDouble(textBox52.Text);
+        }
+        private void Calculate_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked == true)
+            {
+                var Lombardi = new Lombardi(weight, reps);
+                double[] lombardi = Lombardi.weightLifted;
+                lombardi1.Text = lombardi[0].ToString();
+                lombardi2.Text = lombardi[1].ToString();
+                lombardi3.Text = lombardi[2].ToString();
+                lombardi4.Text = lombardi[3].ToString();
+                lombardi5.Text = lombardi[4].ToString();
+                lombardi6.Text = lombardi[5].ToString();
+                lombardi7.Text = lombardi[6].ToString();
+                lombardi8.Text = lombardi[7].ToString();
+                lombardi9.Text = lombardi[8].ToString();
+                lombardi10.Text = lombardi[9].ToString();
+
+                var Brzycki = new brzycki(weight, reps);
+                double[] brzycki = Brzycki.weightLifted;
+                brzycki1.Text = brzycki[0].ToString();
+                brzycki2.Text = brzycki[1].ToString();
+                brzycki3.Text = brzycki[2].ToString();
+                brzycki4.Text = brzycki[3].ToString();
+                brzycki5.Text = brzycki[4].ToString();
+                brzycki6.Text = brzycki[5].ToString();
+                brzycki7.Text = brzycki[6].ToString();
+                brzycki8.Text = brzycki[7].ToString();
+                brzycki9.Text = brzycki[8].ToString();
+                brzycki10.Text = brzycki[9].ToString();
+                
+                var Epley = new epley(weight, reps);
+                double[] epley = Epley.weightLifted;
+                epley1.Text = epley[0].ToString();
+                epley2.Text = epley[1].ToString();
+                epley3.Text = epley[2].ToString();
+                epley4.Text = epley[3].ToString();
+                epley5.Text = epley[4].ToString();
+                epley6.Text = epley[5].ToString();
+                epley7.Text = epley[6].ToString();
+                epley8.Text = epley[7].ToString();
+                epley9.Text = epley[8].ToString();
+                epley10.Text = epley[9].ToString();
+            }
+            else if (radioButton2.Checked == true)
+            {
+                var Lombardi = new Lombardi(weight, reps);
+                double[] lombardi = Lombardi.weightLifted;
+                lombardi1.Text = (Math.Round(lombardi[0]/2.2)).ToString();
+                lombardi2.Text = (Math.Round(lombardi[1] / 2.2)).ToString();
+                lombardi3.Text = (Math.Round(lombardi[2] / 2.2)).ToString();
+                lombardi4.Text = (Math.Round(lombardi[3] / 2.2)).ToString();
+                lombardi5.Text = (Math.Round(lombardi[4] / 2.2)).ToString();
+                lombardi6.Text = (Math.Round(lombardi[5] / 2.2)).ToString();
+                lombardi7.Text = (Math.Round(lombardi[6] / 2.2)).ToString();
+                lombardi8.Text = (Math.Round(lombardi[7] / 2.2)).ToString();
+                lombardi9.Text = (Math.Round(lombardi[8] / 2.2)).ToString();
+                lombardi10.Text = (Math.Round(lombardi[9] / 2.2)).ToString();
+
+                var Brzycki = new brzycki(weight, reps);
+                double[] brzycki = Brzycki.weightLifted;
+                brzycki1.Text = (Math.Round(brzycki[0]/2.2)).ToString();
+                brzycki2.Text = (Math.Round(brzycki[1] / 2.2)).ToString();
+                brzycki3.Text = (Math.Round(brzycki[2] / 2.2)).ToString();
+                brzycki4.Text = (Math.Round(brzycki[3] / 2.2)).ToString();
+                brzycki5.Text = (Math.Round(brzycki[4] / 2.2)).ToString();
+                brzycki6.Text = (Math.Round(brzycki[5] / 2.2)).ToString();
+                brzycki7.Text = (Math.Round(brzycki[6] / 2.2)).ToString();
+                brzycki8.Text = (Math.Round(brzycki[7] / 2.2)).ToString();
+                brzycki9.Text = (Math.Round(brzycki[8] / 2.2)).ToString();
+                brzycki10.Text = (Math.Round(brzycki[9] / 2.2)).ToString();
+                
+                var Epley = new epley(weight, reps);
+                double[] epley = Epley.weightLifted;
+                epley1.Text = (Math.Round(epley[0]/2.2)).ToString();
+                epley2.Text = (Math.Round(epley[1] / 2.2)).ToString();
+                epley3.Text = (Math.Round(epley[2] / 2.2)).ToString();
+                epley4.Text = (Math.Round(epley[3] / 2.2)).ToString();
+                epley5.Text = (Math.Round(epley[4] / 2.2)).ToString();
+                epley6.Text = (Math.Round(epley[5] / 2.2)).ToString();
+                epley7.Text = (Math.Round(epley[6] / 2.2)).ToString();
+                epley8.Text = (Math.Round(epley[7] / 2.2)).ToString();
+                epley9.Text = (Math.Round(epley[8] / 2.2)).ToString();
+                epley10.Text = (Math.Round(epley[9] / 2.2)).ToString();
+            }
+        }
+    }
+
+    class Lombardi : Form
+    {
+        private double _weight;
+        private double _repetitions;
+        private double _max;
+
+        public Lombardi(double weight, double repetitions)
+        {
+            this._weight = weight;
+            this._repetitions = repetitions;
+            _max = this._weight * Math.Pow(this._repetitions, 0.1);
+        }
+
+        public double[] weightLifted
+        {
+            get
+            {
+                double[] array = new double[10];
+                for (int i = 1; i <= 10; i++)
+                {
+                    array[i - 1] = Math.Round(this._max / (Math.Pow(i, .10)));
+                }
+                return array;
+            }
+        }
+    }
+
+    class brzycki : Form
+    {
+        private double _weight;
+        private double _repetitions;
+        private double _max;
+        
+        public brzycki(double weight, double repetitions)
+        {
+            this._weight = weight;
+            this._repetitions = repetitions;
+            _max = this._weight * (36/(37-this._repetitions));
+        }
+        
+        public double[] weightLifted
+        {
+            get
+            {
+                double[] array = new double[10];
+                for (int i = 1; i <= 10; i++)
+                {
+                    array[i - 1] = Math.Round((this._max * (37 - i)) / 36);
+                }
+                return array;
+            }
+        }
+    }  
+    
+    class epley : Form
+    {
+        private double _weight;
+        private double _repetitions;
+        private double _max;
+
+        public epley(double weight, double repetitions)
+        {
+            this._weight = weight;
+            this._repetitions = repetitions;
+            _max = this._weight * (1 + (this._repetitions * 0.0333));
+        }
+
+        public double[] weightLifted
+        {
+            get
+            {
+                double[] array = new double[10];
+                for (int i = 1; i <= 10; i++)
+                {
+                    array[i - 1] = Math.Round(this._max / (1 + i * .0333));
+                }
+                return array;
+            }
+        }
+    }
+}
